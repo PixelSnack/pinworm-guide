@@ -1,3 +1,4 @@
+// Updated for Vite deployment - Complete Pinworm Guide
 import { useState } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
