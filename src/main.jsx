@@ -1,10 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+// Mobile fix: Remove stray "html>" text on mobile devices
+const cleanMobileHTML = () => {
+    if (window.innerWidth <= 768) {
+          setTimeout(() => {
+                  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+                  let node;
+                  while (node = walker.nextNode()) {
+                            if (node.textContent.includes('html>')) {
+                                        node.textContent = node.textContent.replace(/html>/g, '');
+                            }
+                  }
+          }, 100);
+    }
+};
+window.addEventListener('load', cleanMobileHTML);
