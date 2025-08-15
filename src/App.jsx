@@ -1,4 +1,3 @@
-// Complete Pinworm Guide - Enhanced with Scientific Dietary Section
 import { useState } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
@@ -32,6 +31,7 @@ import {
   Plane,
   Building
 } from 'lucide-react'
+import { Analytics } from '@vercel/analytics/react'
 import './App.css'
 
 function App() {
@@ -348,37 +348,23 @@ function App() {
                     <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
                       <p>• Respect need for privacy while ensuring treatment compliance</p>
                       <p>• Provide clear, factual information about the condition</p>
-                      <p>• Allow self-management of hygiene with periodic check-ins</p>
-                      <p>• Discuss importance of not sharing personal items</p>
-                      <p>• Address any embarrassment or social concerns openly</p>
+                      <p>• Allow independence in personal hygiene with guidance</p>
+                      <p>• Address concerns about social stigma with reassurance</p>
+                      <p>• Monitor emotional well-being during treatment</p>
                     </CollapsibleContent>
                   </Collapsible>
 
                   <Collapsible>
                     <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-blue-600 transition-colors duration-200">
                       <ChevronRight className="h-4 w-4" />
-                      Social Life Management
+                      Social & School Management
                     </CollapsibleTrigger>
                     <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
-                      <p>• Normal social activities can continue with proper hygiene</p>
-                      <p>• Avoid sleepovers during active treatment period</p>
-                      <p>• Pack personal hygiene supplies for activities away from home</p>
-                      <p>• Maintain regular shower schedule, especially after sports</p>
-                      <p>• Be discreet about condition while maintaining good practices</p>
-                    </CollapsibleContent>
-                  </Collapsible>
-
-                  <Collapsible>
-                    <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-blue-600 transition-colors duration-200">
-                      <ChevronRight className="h-4 w-4" />
-                      Academic Considerations
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
-                      <p>• Condition should not affect academic performance</p>
-                      <p>• If sleep is disrupted, consider temporary schedule adjustments</p>
-                      <p>• Maintain focus on long-term health and hygiene habits</p>
-                      <p>• Use this as learning opportunity about health management</p>
-                      <p>• Encourage questions and provide reliable health resources</p>
+                      <p>• Maintain normal social activities and school attendance</p>
+                      <p>• Provide discrete hygiene supplies for school</p>
+                      <p>• Address any anxiety about disclosure to friends</p>
+                      <p>• Emphasize that this is a common, treatable condition</p>
+                      <p>• Support continued participation in sports and activities</p>
                     </CollapsibleContent>
                   </Collapsible>
                 </CardContent>
@@ -395,42 +381,28 @@ function App() {
                   <Collapsible>
                     <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-green-600 transition-colors duration-200">
                       <ChevronRight className="h-4 w-4" />
-                      Family Treatment Protocols
+                      Family Treatment Strategy
                     </CollapsibleTrigger>
                     <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
                       <p>• Consider treating all household members simultaneously</p>
                       <p>• Coordinate medication schedules for the entire family</p>
-                      <p>• Implement household-wide hygiene improvements</p>
+                      <p>• Implement household-wide hygiene protocols</p>
+                      <p>• Assign cleaning responsibilities to prevent reinfection</p>
                       <p>• Monitor all family members for symptoms</p>
-                      <p>• Schedule follow-up care for the entire household if needed</p>
                     </CollapsibleContent>
                   </Collapsible>
 
                   <Collapsible>
                     <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-green-600 transition-colors duration-200">
                       <ChevronRight className="h-4 w-4" />
-                      Cleaning & Disinfection
+                      Environmental Control
                     </CollapsibleTrigger>
                     <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
                       <p>• Wash all bedding and clothing in hot water (60°C/140°F)</p>
-                      <p>• Vacuum carpets and upholstered furniture thoroughly</p>
-                      <p>• Disinfect bathroom surfaces, doorknobs, and light switches</p>
-                      <p>• Clean and disinfect toys, especially those that go in mouths</p>
-                      <p>• Maintain increased cleaning frequency for 2-3 weeks</p>
-                    </CollapsibleContent>
-                  </Collapsible>
-
-                  <Collapsible>
-                    <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-green-600 transition-colors duration-200">
-                      <ChevronRight className="h-4 w-4" />
-                      Long-term Prevention
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
-                      <p>• Establish family handwashing routines before meals</p>
-                      <p>• Keep fingernails short and clean for all family members</p>
-                      <p>• Separate personal items like towels and washcloths</p>
-                      <p>• Maintain regular cleaning schedules for common areas</p>
-                      <p>• Educate family about reinfection prevention strategies</p>
+                      <p>• Vacuum carpets and upholstery thoroughly</p>
+                      <p>• Disinfect bathroom surfaces daily</p>
+                      <p>• Clean frequently touched surfaces (doorknobs, light switches)</p>
+                      <p>• Maintain clean, organized living spaces</p>
                     </CollapsibleContent>
                   </Collapsible>
                 </CardContent>
@@ -446,124 +418,79 @@ function App() {
               <Alert className="border-pink-200 bg-pink-50 border-l-4 border-l-pink-500">
                 <Heart className="h-4 w-4" />
                 <AlertDescription>
-                  Professional guidance for maintaining intimate relationships during pinworm treatment. This information is based on medical recommendations and research.
+                  Professional guidance for maintaining intimate relationships during pinworm treatment.
                 </AlertDescription>
               </Alert>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <Card className="border-l-4 border-l-green-500">
-                  <CardHeader>
-                    <CardTitle className="text-green-800 flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5" />
-                      Safe Practices
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3 text-sm">
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-green-800">Recommended Approaches:</h4>
-                      <ul className="space-y-1 text-green-700">
-                        <li>• Shower before intimate contact</li>
-                        <li>• Focus on non-genital intimacy during treatment</li>
-                        <li>• Maintain emotional connection and communication</li>
-                        <li>• Practice excellent hand hygiene before and after contact</li>
-                        <li>• Consider barrier methods if engaging in intimate contact</li>
-                      </ul>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-green-800">Communication Guidelines:</h4>
-                      <ul className="space-y-1 text-green-700">
-                        <li>• Discuss treatment openly with your partner</li>
-                        <li>• Plan alternative forms of intimacy</li>
-                        <li>• Set realistic expectations for the treatment period</li>
-                        <li>• Support each other through the process</li>
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className="bg-green-50 border border-green-200 rounded-lg p-6 border-l-4 border-l-green-500">
+                  <h3 className="text-lg font-semibold text-green-800 mb-4 flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5" />
+                    Safe Intimacy Practices
+                  </h3>
+                  <ul className="space-y-3 text-sm text-green-700">
+                    <li>• Shower before and after intimate contact</li>
+                    <li>• Maintain excellent hand hygiene</li>
+                    <li>• Use barrier protection when appropriate</li>
+                    <li>• Focus on non-genital intimate activities</li>
+                    <li>• Communicate openly about comfort levels</li>
+                    <li>• Consider partner treatment to prevent reinfection</li>
+                  </ul>
+                </div>
 
-                <Card className="border-l-4 border-l-red-500">
-                  <CardHeader>
-                    <CardTitle className="text-red-800 flex items-center gap-2">
-                      <AlertTriangle className="h-5 w-5" />
-                      Higher Risk Activities
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3 text-sm">
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-red-800">Activities to Avoid:</h4>
-                      <ul className="space-y-1 text-red-700">
-                        <li>• Oral-anal contact</li>
-                        <li>• Contact with anal area during active infection</li>
-                        <li>• Sharing unwashed intimate items</li>
-                        <li>• Intimate contact without prior hygiene</li>
-                      </ul>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-red-800">Transmission Risks:</h4>
-                      <ul className="space-y-1 text-red-700">
-                        <li>• Hand-to-mouth contact after intimate touching</li>
-                        <li>• Sharing bedding without proper washing</li>
-                        <li>• Close contact without shower/hygiene</li>
-                        <li>• Contaminated surfaces in shared spaces</li>
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className="bg-red-50 border border-red-200 rounded-lg p-6 border-l-4 border-l-red-500">
+                  <h3 className="text-lg font-semibold text-red-800 mb-4 flex items-center gap-2">
+                    <AlertTriangle className="h-5 w-5" />
+                    Higher Risk Activities
+                  </h3>
+                  <ul className="space-y-3 text-sm text-red-700">
+                    <li>• Oral-anal contact (highest risk)</li>
+                    <li>• Digital-anal contact without barriers</li>
+                    <li>• Sharing unwashed intimate items</li>
+                    <li>• Intimate contact without prior hygiene</li>
+                    <li>• Activities involving the anal area</li>
+                    <li>• Contact during active symptom periods</li>
+                  </ul>
+                </div>
               </div>
 
-              <Collapsible>
-                <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-blue-600 transition-colors duration-200">
-                  <ChevronDown className="h-4 w-4" />
-                  Detailed Practical Guidelines
-                </CollapsibleTrigger>
-                <CollapsibleContent className="mt-4 space-y-4">
-                  <Card className="border-blue-200">
-                    <CardHeader>
-                      <CardTitle className="text-base text-blue-800">Treatment Period Recommendations (2-3 weeks)</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-3 text-sm">
-                      <div>
-                        <h4 className="font-medium mb-2">Week 1 (Active Treatment):</h4>
-                        <ul className="space-y-1 text-gray-700 ml-4">
-                          <li>• Focus on non-genital physical intimacy</li>
-                          <li>• Prioritize emotional connection and communication</li>
-                          <li>• Maintain separate sleeping arrangements if possible</li>
-                          <li>• Shower before any intimate contact</li>
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-medium mb-2">Week 2-3 (Monitoring Period):</h4>
-                        <ul className="space-y-1 text-gray-700 ml-4">
-                          <li>• Gradually resume normal intimacy with continued precautions</li>
-                          <li>• Maintain excellent hygiene practices</li>
-                          <li>• Monitor for any symptom recurrence</li>
-                          <li>• Continue open communication about comfort levels</li>
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-medium mb-2">Post-Treatment:</h4>
-                        <ul className="space-y-1 text-gray-700 ml-4">
-                          <li>• Resume normal intimate relationship</li>
-                          <li>• Maintain improved hygiene habits as prevention</li>
-                          <li>• Discuss experience and lessons learned</li>
-                          <li>• Consider couples counseling if relationship was significantly impacted</li>
-                        </ul>
-                      </div>
-                    </CardContent>
-                  </Card>
+              <Card className="border-l-4 border-l-blue-500">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Heart className="h-5 w-5 text-blue-600" />
+                    Relationship Considerations
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <Collapsible>
+                    <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-blue-600 transition-colors duration-200">
+                      <ChevronRight className="h-4 w-4" />
+                      Communication & Support
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
+                      <p>• Discuss the condition openly and honestly with your partner</p>
+                      <p>• Explain that pinworms are common and easily treatable</p>
+                      <p>• Work together on prevention strategies</p>
+                      <p>• Be patient with temporary lifestyle adjustments</p>
+                      <p>• Focus on emotional intimacy during treatment</p>
+                    </CollapsibleContent>
+                  </Collapsible>
 
-                  <Alert className="border-blue-200 bg-blue-50 border-l-4 border-l-blue-500">
-                    <Info className="h-4 w-4" />
-                    <AlertDescription className="text-sm">
-                      <strong>Professional Note:</strong> These guidelines are based on medical recommendations for preventing transmission while maintaining relationship health. Individual circumstances may vary. Consult healthcare providers for personalized advice, especially if you have concerns about transmission or relationship impact.
-                    </AlertDescription>
-                  </Alert>
+                  <Collapsible>
+                    <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-blue-600 transition-colors duration-200">
+                      <ChevronRight className="h-4 w-4" />
+                      Practical Guidelines
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
+                      <p>• Shower together as part of your hygiene routine</p>
+                      <p>• Keep fingernails trimmed short for both partners</p>
+                      <p>• Wash hands thoroughly before and after any intimate contact</p>
+                      <p>• Consider simultaneous treatment for both partners</p>
+                      <p>• Use fresh, clean bedding and sleepwear</p>
+                    </CollapsibleContent>
+                  </Collapsible>
                 </CardContent>
-              </Collapsible>
+              </Card>
             </AdultContentWarning>
           </div>
         )
@@ -590,156 +517,105 @@ function App() {
                   <Collapsible>
                     <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-blue-600 transition-colors duration-200">
                       <ChevronRight className="h-4 w-4" />
-                      Workplace Considerations
+                      Workplace Guidelines
                     </CollapsibleTrigger>
-                    <CollapsibleContent className="mt-2 space-y-2 text-sm text-gray-700">
-                      <p>• Continue normal work schedule - no need for time off</p>
-                      <p>• Maintain excellent hand hygiene, especially before meals</p>
-                      <p>• Avoid sharing food or eating utensils with colleagues</p>
-                      <p>• Keep personal items (water bottles, pens) separate</p>
-                      <p>• Use hand sanitizer frequently, especially after bathroom use</p>
-                      <p>• Consider packing individual lunches rather than shared meals</p>
+                    <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
+                      <p>• Continue normal work attendance</p>
+                      <p>• Maintain excellent hand hygiene</p>
+                      <p>• Avoid sharing food or eating utensils</p>
+                      <p>• Keep personal items separate</p>
+                      <p>• Use individual bathroom supplies when possible</p>
                     </CollapsibleContent>
                   </Collapsible>
 
                   <Collapsible>
                     <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-blue-600 transition-colors duration-200">
                       <ChevronRight className="h-4 w-4" />
-                      Social Gatherings
+                      Social Interactions
                     </CollapsibleTrigger>
-                    <CollapsibleContent className="mt-2 space-y-2 text-sm text-gray-700">
-                      <p>• Most social activities can continue with precautions</p>
-                      <p>• Avoid potluck meals or shared food preparation</p>
-                      <p>• Bring your own snacks and drinks to gatherings</p>
-                      <p>• Be mindful of handshaking and close contact</p>
-                      <p>• Wash hands frequently, especially before eating</p>
-                      <p>• Consider postponing overnight visits during active treatment</p>
-                    </CollapsibleContent>
-                  </Collapsible>
-
-                  <Collapsible>
-                    <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-blue-600 transition-colors duration-200">
-                      <ChevronRight className="h-4 w-4" />
-                      Childcare & Schools
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="mt-2 space-y-2 text-sm text-gray-700">
-                      <p>• Children can attend school and daycare during treatment</p>
-                      <p>• Inform caregivers about increased hygiene needs</p>
-                      <p>• Pack individual snacks and discourage food sharing</p>
-                      <p>• Ensure frequent handwashing, especially before meals</p>
-                      <p>• Send extra underwear and hygiene supplies</p>
-                      <p>• Monitor for symptoms that might disrupt learning</p>
+                    <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
+                      <p>• Maintain normal social activities</p>
+                      <p>• Practice good hand hygiene before meals</p>
+                      <p>• Avoid sharing personal items</p>
+                      <p>• Be mindful of bathroom hygiene in public spaces</p>
+                      <p>• No need to isolate or avoid social contact</p>
                     </CollapsibleContent>
                   </Collapsible>
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-purple-500">
+              <Card className="border-l-4 border-l-green-500">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Activity className="h-5 w-5 text-purple-600" />
+                    <Activity className="h-5 w-5 text-green-600" />
                     Sports & Physical Activities
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <Collapsible>
-                    <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-purple-600 transition-colors duration-200">
+                    <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-green-600 transition-colors duration-200">
                       <ChevronRight className="h-4 w-4" />
                       Exercise & Fitness
                     </CollapsibleTrigger>
-                    <CollapsibleContent className="mt-2 space-y-2 text-sm text-gray-700">
-                      <p>• Continue regular exercise routine - it supports immune function</p>
+                    <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
+                      <p>• Continue regular exercise routines</p>
                       <p>• Shower immediately after workouts</p>
-                      <p>• Bring your own towels and water bottles</p>
-                      <p>• Avoid sharing equipment when possible</p>
-                      <p>• Wipe down equipment before and after use</p>
-                      <p>• Change into clean clothes after exercising</p>
+                      <p>• Use personal towels and water bottles</p>
+                      <p>• Avoid sharing gym equipment without cleaning</p>
+                      <p>• Maintain good hygiene in locker rooms</p>
                     </CollapsibleContent>
                   </Collapsible>
 
                   <Collapsible>
-                    <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-purple-600 transition-colors duration-200">
+                    <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-green-600 transition-colors duration-200">
                       <ChevronRight className="h-4 w-4" />
                       Swimming & Water Activities
                     </CollapsibleTrigger>
-                    <CollapsibleContent className="mt-2 space-y-2 text-sm text-gray-700">
-                      <p>• Swimming is generally safe in properly chlorinated pools</p>
-                      <p>• Shower before entering pool areas</p>
-                      <p>• Avoid swallowing pool water</p>
-                      <p>• Use your own towels and don't share</p>
+                    <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
+                      <p>• Swimming is generally safe with proper hygiene</p>
+                      <p>• Shower before entering pools</p>
+                      <p>• Avoid swallowing pool or recreational water</p>
+                      <p>• Use personal towels and swimwear</p>
                       <p>• Change out of wet swimwear promptly</p>
-                      <p>• Consider avoiding crowded public pools during active treatment</p>
-                    </CollapsibleContent>
-                  </Collapsible>
-
-                  <Collapsible>
-                    <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-purple-600 transition-colors duration-200">
-                      <ChevronRight className="h-4 w-4" />
-                      Team Sports & Group Activities
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="mt-2 space-y-2 text-sm text-gray-700">
-                      <p>• Participation is generally safe with good hygiene</p>
-                      <p>• Avoid sharing water bottles or snacks</p>
-                      <p>• Wash hands before and after activities</p>
-                      <p>• Bring individual equipment when possible</p>
-                      <p>• Shower or clean up immediately after activities</p>
-                      <p>• Be extra cautious with activities involving close contact</p>
                     </CollapsibleContent>
                   </Collapsible>
                 </CardContent>
               </Card>
             </div>
 
-            <Card className="border-l-4 border-l-orange-500">
+            <Card className="border-l-4 border-l-purple-500">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Plane className="h-5 w-5 text-orange-600" />
+                  <Plane className="h-5 w-5 text-purple-600" />
                   Travel Considerations
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Collapsible>
-                  <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-orange-600 transition-colors duration-200">
+                  <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-purple-600 transition-colors duration-200">
                     <ChevronRight className="h-4 w-4" />
-                    Short-term Travel (1-3 days)
+                    Travel Preparation
                   </CollapsibleTrigger>
-                  <CollapsibleContent className="mt-2 space-y-2 text-sm text-gray-700">
-                    <p>• Pack extra hygiene supplies and hand sanitizer</p>
-                    <p>• Bring your own towels and personal items</p>
-                    <p>• Maintain medication schedule while away</p>
-                    <p>• Choose accommodations with private bathrooms if possible</p>
-                    <p>• Pack extra underwear and clothing</p>
-                    <p>• Avoid sharing beds or bedding with others</p>
+                  <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
+                    <p>• Pack sufficient medication for the entire trip</p>
+                    <p>• Bring extra hygiene supplies</p>
+                    <p>• Research medical facilities at your destination</p>
+                    <p>• Consider travel insurance for medical needs</p>
+                    <p>• Pack hand sanitizer and disinfecting wipes</p>
                   </CollapsibleContent>
                 </Collapsible>
 
                 <Collapsible>
-                  <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-orange-600 transition-colors duration-200">
+                  <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-purple-600 transition-colors duration-200">
                     <ChevronRight className="h-4 w-4" />
-                    Extended Travel (1+ weeks)
+                    During Travel
                   </CollapsibleTrigger>
-                  <CollapsibleContent className="mt-2 space-y-2 text-sm text-gray-700">
-                    <p>• Consider postponing non-essential travel during active treatment</p>
-                    <p>• Ensure access to medical care at destination</p>
-                    <p>• Pack sufficient medication for entire trip plus extra</p>
-                    <p>• Research local hygiene facilities and accommodations</p>
-                    <p>• Maintain strict hygiene routines despite schedule changes</p>
-                    <p>• Consider travel insurance that covers medical needs</p>
-                  </CollapsibleContent>
-                </Collapsible>
-
-                <Collapsible>
-                  <CollapsibleTrigger className="flex items-center gap-2 font-medium hover:text-orange-600 transition-colors duration-200">
-                    <ChevronRight className="h-4 w-4" />
-                    International Travel
-                  </CollapsibleTrigger>
-                  <CollapsibleContent className="mt-2 space-y-2 text-sm text-gray-700">
-                    <p>• Research medication availability at destination</p>
-                    <p>• Carry prescription documentation for medications</p>
-                    <p>• Pack comprehensive first aid and hygiene kit</p>
-                    <p>• Understand local healthcare system access</p>
-                    <p>• Maintain extra vigilance with food and water safety</p>
-                    <p>• Consider consulting travel medicine specialist</p>
+                  <CollapsibleContent className="mt-2 pl-6 space-y-2 text-sm text-gray-700">
+                    <p>• Maintain medication schedule across time zones</p>
+                    <p>• Practice extra hand hygiene in public spaces</p>
+                    <p>• Use personal pillows and blankets when possible</p>
+                    <p>• Be cautious with food and water in new locations</p>
+                    <p>• Maintain regular hygiene routines despite schedule changes</p>
                   </CollapsibleContent>
                 </Collapsible>
               </CardContent>
@@ -757,47 +633,32 @@ function App() {
               </AlertDescription>
             </Alert>
 
-            <div>
-              <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                <Utensils className="h-4 w-4" />
+            {/* Enhanced Dietary Approaches Section */}
+            <div className="bg-white rounded-lg border border-gray-200 p-6 border-l-4 border-l-blue-500">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <Utensils className="h-5 w-5 text-blue-600" />
                 Dietary Approaches
               </h3>
+              
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-green-50 border border-green-200 rounded-lg p-4 border-l-4 border-l-green-500">
                   <h4 className="font-semibold text-green-800 mb-3">Potentially Helpful Foods:</h4>
                   <div className="space-y-3 text-sm">
-                    <div className="border-b border-green-200 pb-2">
-                      <div className="font-medium text-green-800 mb-1">🎃 Pumpkin Seeds (1-2 handfuls daily)</div>
-                      <p className="text-green-700 text-xs leading-relaxed">
-                        <strong>Active compound:</strong> Cucurbitacin - may affect parasite motility and development. 
-                        <strong>Evidence:</strong> Limited scientific support; traditional use in many cultures. 
-                        Recent studies show 69-75% reduction in some parasites, but specific pinworm research is limited.
-                      </p>
-                    </div>
-                    
-                    <div className="border-b border-green-200 pb-2">
-                      <div className="font-medium text-green-800 mb-1">🧄 Fresh Garlic (in cooking)</div>
-                      <p className="text-green-700 text-xs leading-relaxed">
-                        <strong>Active compound:</strong> Allicin - disrupts parasite cell membranes and metabolism. 
-                        <strong>Evidence:</strong> Proven antiparasitic against protozoa (Giardia, Entamoeba); limited pinworm-specific research. 
-                        Most effective when crushed fresh (releases allicin).
-                      </p>
-                    </div>
-                    
-                    <div className="border-b border-green-200 pb-2">
-                      <div className="font-medium text-green-800 mb-1">🦠 Probiotic Foods (yogurt, kefir, fermented vegetables)</div>
-                      <p className="text-green-700 text-xs leading-relaxed">
-                        <strong>Mechanism:</strong> Enhance gut barrier function and immune response. 
-                        <strong>Evidence:</strong> Strong research showing probiotics improve resistance to intestinal parasites by strengthening gut microbiome and producing antimicrobial compounds.
-                      </p>
-                    </div>
-                    
                     <div>
-                      <div className="font-medium text-green-800 mb-1">🌾 High-Fiber Foods (support digestive health)</div>
-                      <p className="text-green-700 text-xs leading-relaxed">
-                        <strong>Mechanism:</strong> Promote regular bowel movements, support beneficial gut bacteria, enhance mucus production. 
-                        <strong>Evidence:</strong> Well-established benefits for gut health; may help eliminate parasites through improved intestinal transit.
-                      </p>
+                      <p className="font-medium text-green-700">• Pumpkin seeds: 1-2 handfuls daily</p>
+                      <p className="text-green-600 text-xs ml-2">Contains cucurbitacin compounds that may affect parasite motility. Studies show 69-75% reduction in some parasites, though pinworm-specific research is limited.</p>
+                    </div>
+                    <div>
+                      <p className="font-medium text-green-700">• Garlic: Fresh garlic in cooking</p>
+                      <p className="text-green-600 text-xs ml-2">Allicin compounds disrupt parasite cell membranes. Most effective when crushed fresh. Proven against protozoa like Giardia and Entamoeba.</p>
+                    </div>
+                    <div>
+                      <p className="font-medium text-green-700">• Probiotic foods: Yogurt, kefir, fermented vegetables</p>
+                      <p className="text-green-600 text-xs ml-2">Strengthen gut barrier and immune response. Beneficial bacteria produce antimicrobial compounds and compete with parasites for resources.</p>
+                    </div>
+                    <div>
+                      <p className="font-medium text-green-700">• High-fiber foods: Support regular bowel movements</p>
+                      <p className="text-green-600 text-xs ml-2">Support beneficial bacteria growth, enhance mucus production, and improve intestinal transit to help eliminate parasites naturally.</p>
                     </div>
                   </div>
                 </div>
@@ -805,276 +666,203 @@ function App() {
                 <div className="bg-red-50 border border-red-200 rounded-lg p-4 border-l-4 border-l-red-500">
                   <h4 className="font-semibold text-red-800 mb-3">Foods to Limit:</h4>
                   <div className="space-y-3 text-sm">
-                    <div className="border-b border-red-200 pb-2">
-                      <div className="font-medium text-red-800 mb-1">🍭 Excess Sugar & Refined Carbohydrates</div>
-                      <p className="text-red-700 text-xs leading-relaxed">
-                        <strong>Rationale:</strong> High sugar intake may disrupt gut microbiome balance, potentially reducing resistance to parasites. 
-                        <strong>Evidence:</strong> Studies show refined sugars can suppress immune function and alter beneficial gut bacteria.
-                      </p>
-                    </div>
-                    
-                    <div className="border-b border-red-200 pb-2">
-                      <div className="font-medium text-red-800 mb-1">🥫 Processed Foods During Treatment</div>
-                      <p className="text-red-700 text-xs leading-relaxed">
-                        <strong>Rationale:</strong> Often contain additives that may disrupt gut microbiome; lack nutrients needed for immune function. 
-                        <strong>Focus instead:</strong> Whole foods that support digestive health and immune response.
-                      </p>
-                    </div>
-                    
-                    <div className="border-b border-red-200 pb-2">
-                      <div className="font-medium text-red-800 mb-1">🌶️ Foods That Trigger Digestive Symptoms</div>
-                      <p className="text-red-700 text-xs leading-relaxed">
-                        <strong>Rationale:</strong> Individual tolerance varies; avoid foods that cause inflammation or digestive upset during treatment. 
-                        <strong>Common triggers:</strong> Spicy foods, high-fat foods, or personal food sensitivities.
-                      </p>
-                    </div>
-                    
                     <div>
-                      <div className="font-medium text-red-800 mb-1">🐟 Undercooked Meat & Fish</div>
-                      <p className="text-red-700 text-xs leading-relaxed">
-                        <strong>Rationale:</strong> Risk of additional parasitic infections during treatment period. 
-                        <strong>Precaution:</strong> Ensure proper cooking temperatures to avoid compounding parasitic burden.
-                      </p>
+                      <p className="font-medium text-red-700">• Excess sugar and refined carbohydrates</p>
+                      <p className="text-red-600 text-xs ml-2">Disrupt gut microbiome balance and may suppress immune function, potentially hindering recovery.</p>
+                    </div>
+                    <div>
+                      <p className="font-medium text-red-700">• Processed foods during treatment</p>
+                      <p className="text-red-600 text-xs ml-2">Often lack essential nutrients and contain additives that may disrupt beneficial gut bacteria.</p>
+                    </div>
+                    <div>
+                      <p className="font-medium text-red-700">• Foods that trigger digestive symptoms</p>
+                      <p className="text-red-600 text-xs ml-2">Individual sensitivities may worsen discomfort during treatment. Focus on easily digestible, nutrient-dense foods.</p>
+                    </div>
+                    <div>
+                      <p className="font-medium text-red-700">• Undercooked meat and fish</p>
+                      <p className="text-red-600 text-xs ml-2">Risk of additional parasitic infections while immune system is managing current condition.</p>
                     </div>
                   </div>
                 </div>
               </div>
-              
-              <Alert className="border-blue-200 bg-blue-50 mt-4 border-l-4 border-l-blue-500">
+
+              <Alert className="border-blue-200 bg-blue-50 border-l-4 border-l-blue-500 mt-4">
                 <Info className="h-4 w-4" />
                 <AlertDescription className="text-sm">
-                  <strong>Scientific Note:</strong> While these dietary approaches have traditional use and some research support, 
-                  they should complement, not replace, proven antiparasitic medications. Individual responses may vary, and 
-                  more research is needed specifically for pinworm infections.
+                  <strong>Scientific Note:</strong> While traditional use supports these approaches, peer-reviewed research specifically on pinworms is limited. These foods may provide general immune and digestive support during treatment.
                 </AlertDescription>
               </Alert>
             </div>
 
             {/* Herbal and Traditional Approaches */}
-            <Card className="border-l-4 border-l-yellow-500">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Leaf className="h-5 w-5 text-yellow-600" />
-                  Herbal and Traditional Approaches
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Alert className="border-orange-200 bg-orange-50">
-                  <AlertTriangle className="h-4 w-4" />
-                  <AlertDescription className="text-sm">
-                    <strong>Note:</strong> Scientific evidence for herbal treatments is limited. These should only be used as complementary support alongside proven medical treatment.
-                  </AlertDescription>
-                </Alert>
+            <div className="bg-white rounded-lg border border-gray-200 p-6 border-l-4 border-l-yellow-500">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <Leaf className="h-5 w-5 text-yellow-600" />
+                Herbal Considerations
+              </h3>
+              
+              <Alert className="border-orange-200 bg-orange-50 border-l-4 border-l-orange-500 mb-4">
+                <AlertTriangle className="h-4 w-4" />
+                <AlertDescription className="text-sm">
+                  <strong>Note:</strong> Scientific evidence for herbal treatments is limited. These should only be used as complementary support alongside proven medical treatment.
+                </AlertDescription>
+              </Alert>
 
-                <div className="space-y-3 text-sm">
-                  <div>
-                    <span className="font-medium text-yellow-800">• Wormwood:</span> Traditional use, requires professional guidance
-                  </div>
-                  <div>
-                    <span className="font-medium text-yellow-800">• Black walnut:</span> Traditional antiparasitic, limited modern evidence
-                  </div>
-                  <div>
-                    <span className="font-medium text-yellow-800">• Cloves:</span> Traditional use, may support digestive health
-                  </div>
-                  <div>
-                    <span className="font-medium text-yellow-800">• Papaya seeds:</span> Traditional use in some cultures
-                  </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-semibold text-yellow-800 mb-3">Traditional Herbs:</h4>
+                  <ul className="space-y-2 text-sm text-yellow-700">
+                    <li>• <strong>Wormwood:</strong> Traditional use, requires professional guidance</li>
+                    <li>• <strong>Black walnut:</strong> Traditional antiparasitic, limited modern evidence</li>
+                    <li>• <strong>Cloves:</strong> Traditional use, may support digestive health</li>
+                    <li>• <strong>Oregano oil:</strong> General antimicrobial properties</li>
+                  </ul>
                 </div>
-              </CardContent>
-            </Card>
+                
+                <div className="bg-pink-50 border border-pink-200 rounded-lg p-4 border-l-4 border-l-pink-500">
+                  <h4 className="font-semibold text-pink-800 mb-3 flex items-center gap-2">
+                    <AlertTriangle className="h-4 w-4" />
+                    Important Notes
+                  </h4>
+                  <ul className="space-y-2 text-sm text-pink-700">
+                    <li>• Consult healthcare provider before use</li>
+                    <li>• May interact with medications</li>
+                    <li>• Not recommended as sole treatment</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
             {/* Lifestyle Support */}
-            <div>
-              <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                <Target className="h-4 w-4" />
-                Lifestyle Support
+            <div className="bg-white rounded-lg border border-gray-200 p-6 border-l-4 border-l-purple-500">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <Shield className="h-5 w-5 text-purple-600" />
+                Lifestyle and Wellness Support
               </h3>
               
               <div className="grid md:grid-cols-3 gap-4">
-                <Card className="border-l-4 border-l-blue-500">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-base">Stress Management</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-2 text-sm">
-                    <p>• Regular sleep schedule</p>
-                    <p>• Stress reduction techniques</p>
-                    <p>• Moderate exercise</p>
-                    <p>• Mindfulness practices</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-l-4 border-l-green-500">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-base">Digestive Health</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-2 text-sm">
-                    <p>• Stay well-hydrated</p>
-                    <p>• Regular meal timing</p>
-                    <p>• Gentle movement after meals</p>
-                    <p>• Avoid digestive irritants</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-l-4 border-l-purple-500">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-base">Immune Support</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-2 text-sm">
-                    <p>• Adequate sleep (7-9 hours)</p>
-                    <p>• Regular physical activity</p>
-                    <p>• Balanced nutrition</p>
-                    <p>• Limit alcohol and smoking</p>
-                  </CardContent>
-                </Card>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 border-l-4 border-l-blue-500">
+                  <h4 className="font-semibold text-blue-800 mb-3">Stress Management</h4>
+                  <ul className="space-y-1 text-sm text-blue-700">
+                    <li>• Regular sleep schedule</li>
+                    <li>• Stress reduction techniques</li>
+                    <li>• Moderate exercise</li>
+                    <li>• Mindfulness practices</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 border-l-4 border-l-green-500">
+                  <h4 className="font-semibold text-green-800 mb-3">Digestive Health</h4>
+                  <ul className="space-y-1 text-sm text-green-700">
+                    <li>• Stay well-hydrated</li>
+                    <li>• Regular meal timing</li>
+                    <li>• Gentle movement after meals</li>
+                    <li>• Avoid digestive irritants</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 border-l-4 border-l-purple-500">
+                  <h4 className="font-semibold text-purple-800 mb-3">Immune Support</h4>
+                  <ul className="space-y-1 text-sm text-purple-700">
+                    <li>• Adequate sleep (7-9 hours)</li>
+                    <li>• Regular physical activity</li>
+                    <li>• Balanced nutrition</li>
+                    <li>• Limit alcohol and smoking</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
             {/* Complementary Therapies */}
-            <Card className="border-l-4 border-l-indigo-500">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Zap className="h-5 w-5 text-indigo-600" />
-                  Complementary Therapies
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3 text-sm">
-                <div>
-                  <span className="font-medium">• Probiotics:</span> May support gut health during and after treatment
-                </div>
-                <div>
-                  <span className="font-medium">• Digestive enzymes:</span> For those with digestive sensitivities
-                </div>
-                <div>
-                  <span className="font-medium">• Immune support:</span> Vitamin C, zinc (within recommended daily amounts)
-                </div>
-                <div>
-                  <span className="font-medium">• Anti-inflammatory foods:</span> Support overall digestive health
-                </div>
-              </CardContent>
-            </Card>
+            <div className="bg-white rounded-lg border border-gray-200 p-6 border-l-4 border-l-teal-500">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <Target className="h-5 w-5 text-teal-600" />
+                Complementary Therapies
+              </h3>
+              
+              <div className="space-y-3 text-sm text-gray-700">
+                <p>• <strong>Probiotics:</strong> May support gut health during and after treatment</p>
+                <p>• <strong>Digestive enzymes:</strong> For those with digestive sensitivities</p>
+                <p>• <strong>Immune support:</strong> Vitamin C, zinc (within recommended daily amounts)</p>
+                <p>• <strong>Anti-inflammatory foods:</strong> Support overall digestive health</p>
+              </div>
+            </div>
           </div>
         )
 
       case 'guidelines':
         return (
           <div className="space-y-6">
-            {/* DO/DON'T Side-by-side layout */}
+            {/* DO/DON'T Guidelines */}
             <div className="grid md:grid-cols-2 gap-6">
-              <Card className="border-l-4 border-l-green-500">
-                <CardHeader>
-                  <CardTitle className="text-green-800 flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5" />
-                    DO - Essential Practices
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3 text-sm">
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-green-800">Hygiene Essentials:</h4>
-                    <ul className="space-y-1 text-green-700">
-                      <li>• Wash hands thoroughly with soap for 20+ seconds</li>
-                      <li>• Shower in the morning to remove overnight eggs</li>
-                      <li>• Keep fingernails very short and clean</li>
-                      <li>• Change underwear and pajamas daily</li>
-                      <li>• Wash bedding in hot water (60°C/140°F) every 2-3 days</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-green-800">Treatment Compliance:</h4>
-                    <ul className="space-y-1 text-green-700">
-                      <li>• Take medication exactly as prescribed</li>
-                      <li>• Complete the full treatment course</li>
-                      <li>• Follow up with healthcare provider if symptoms persist</li>
-                      <li>• Consider treating all household members</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-green-800">Environmental Control:</h4>
-                    <ul className="space-y-1 text-green-700">
-                      <li>• Vacuum carpets and furniture regularly</li>
-                      <li>• Disinfect bathroom surfaces daily</li>
-                      <li>• Clean doorknobs, light switches, and frequently touched surfaces</li>
-                      <li>• Wash toys and personal items regularly</li>
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="bg-green-50 border border-green-200 rounded-lg p-6 border-l-4 border-l-green-500">
+                <h3 className="text-lg font-semibold text-green-800 mb-4 flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5" />
+                  DO: Essential Actions
+                </h3>
+                <ul className="space-y-3 text-sm text-green-700">
+                  <li>• Take medication exactly as prescribed</li>
+                  <li>• Wash hands frequently with soap and water</li>
+                  <li>• Shower in the morning to remove overnight eggs</li>
+                  <li>• Keep fingernails trimmed short and clean</li>
+                  <li>• Wash bedding and clothing in hot water (60°C/140°F)</li>
+                  <li>• Vacuum carpets and furniture regularly</li>
+                  <li>• Disinfect bathroom surfaces daily</li>
+                  <li>• Consider treating all household members</li>
+                </ul>
+              </div>
 
-              <Card className="border-l-4 border-l-red-500">
-                <CardHeader>
-                  <CardTitle className="text-red-800 flex items-center gap-2">
-                    <AlertTriangle className="h-5 w-5" />
-                    DON'T - Avoid These Practices
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3 text-sm">
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-red-800">Hygiene Mistakes:</h4>
-                    <ul className="space-y-1 text-red-700">
-                      <li>• Don't scratch the anal area (increases spread)</li>
-                      <li>• Don't bite fingernails or put fingers in mouth</li>
-                      <li>• Don't share towels, washcloths, or personal items</li>
-                      <li>• Don't shake out bedding or clothing (spreads eggs)</li>
-                      <li>• Don't rely on hand sanitizer alone</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-red-800">Treatment Errors:</h4>
-                    <ul className="space-y-1 text-red-700">
-                      <li>• Don't skip doses or stop treatment early</li>
-                      <li>• Don't assume one dose is sufficient</li>
-                      <li>• Don't ignore persistent symptoms</li>
-                      <li>• Don't treat only the infected person (family spread is common)</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-red-800">Environmental Mistakes:</h4>
-                    <ul className="space-y-1 text-red-700">
-                      <li>• Don't use cold water for washing contaminated items</li>
-                      <li>• Don't forget to clean under fingernails</li>
-                      <li>• Don't ignore frequently touched surfaces</li>
-                      <li>• Don't assume the problem will resolve without treatment</li>
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="bg-red-50 border border-red-200 rounded-lg p-6 border-l-4 border-l-red-500">
+                <h3 className="text-lg font-semibold text-red-800 mb-4 flex items-center gap-2">
+                  <AlertTriangle className="h-5 w-5" />
+                  DON'T: Avoid These Actions
+                </h3>
+                <ul className="space-y-3 text-sm text-red-700">
+                  <li>• Don't scratch the anal area</li>
+                  <li>• Don't bite fingernails or put fingers in mouth</li>
+                  <li>• Don't share towels, washcloths, or underwear</li>
+                  <li>• Don't shake out bedding or clothing</li>
+                  <li>• Don't eat in the bedroom</li>
+                  <li>• Don't skip doses of prescribed medication</li>
+                  <li>• Don't assume the infection is gone without completing treatment</li>
+                  <li>• Don't panic - this is a common, treatable condition</li>
+                </ul>
+              </div>
             </div>
 
-            {/* Warning boxes for medical attention */}
-            <div className="grid md:grid-cols-2 gap-4">
-              <Alert className="border-yellow-200 bg-yellow-50 border-l-4 border-l-yellow-500">
-                <AlertTriangle className="h-4 w-4" />
-                <AlertDescription>
-                  <strong>Seek Medical Attention If:</strong>
-                  <ul className="mt-2 space-y-1 text-sm">
-                    <li>• Symptoms persist after completing treatment</li>
-                    <li>• Severe abdominal pain develops</li>
-                    <li>• Signs of secondary bacterial infection appear</li>
-                    <li>• Multiple family members are repeatedly infected</li>
-                  </ul>
-                </AlertDescription>
-              </Alert>
+            {/* Medical Attention Warnings */}
+            <div className="space-y-4">
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 border-l-4 border-l-yellow-500">
+                <h4 className="font-semibold text-yellow-800 mb-2 flex items-center gap-2">
+                  <AlertTriangle className="h-4 w-4" />
+                  Seek Medical Attention If:
+                </h4>
+                <ul className="text-sm text-yellow-700 space-y-1">
+                  <li>• Symptoms persist after completing treatment</li>
+                  <li>• Severe abdominal pain develops</li>
+                  <li>• Signs of secondary bacterial infection appear</li>
+                  <li>• Multiple family members are repeatedly infected</li>
+                </ul>
+              </div>
 
-              <Alert className="border-pink-200 bg-pink-50 border-l-4 border-l-pink-500">
-                <AlertDescription>
-                  <strong>Emergency Care If:</strong>
-                  <ul className="mt-2 space-y-1 text-sm">
-                    <li>• Severe allergic reaction to medication</li>
-                    <li>• Intense abdominal pain with vomiting</li>
-                    <li>• Signs of intestinal obstruction</li>
-                    <li>• High fever with severe symptoms</li>
-                  </ul>
-                </AlertDescription>
-              </Alert>
+              <div className="bg-pink-50 border border-pink-200 rounded-lg p-4 border-l-4 border-l-pink-500">
+                <h4 className="font-semibold text-pink-800 mb-2 flex items-center gap-2">
+                  <AlertTriangle className="h-4 w-4" />
+                  Immediate Medical Care If:
+                </h4>
+                <ul className="text-sm text-pink-700 space-y-1">
+                  <li>• High fever (over 38.5°C/101.3°F)</li>
+                  <li>• Severe allergic reaction to medication</li>
+                  <li>• Persistent vomiting preventing medication retention</li>
+                  <li>• Signs of dehydration or severe illness</li>
+                </ul>
+              </div>
             </div>
 
-            {/* Timeline progression cards */}
-            <div>
-              <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
+            {/* Timeline Progression */}
+            <div className="bg-white rounded-lg border border-gray-200 p-6 border-l-4 border-l-blue-500">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <Clock className="h-5 w-5 text-blue-600" />
                 Treatment Timeline & Expectations
               </h3>
               
@@ -1082,63 +870,59 @@ function App() {
                 {[
                   {
                     week: "Week 1",
-                    title: "Active Treatment",
+                    title: "Initial Treatment",
                     color: "blue",
                     items: [
                       "Take first dose of medication",
-                      "Begin intensive hygiene protocol",
+                      "Begin strict hygiene protocol",
                       "Start environmental cleaning",
-                      "May still see live worms (normal)"
+                      "May still see worms (normal)"
                     ]
                   },
                   {
-                    week: "Week 2", 
+                    week: "Week 2",
                     title: "Second Dose",
-                    color: "purple",
+                    color: "green",
                     items: [
-                      "Take second dose as prescribed",
-                      "Continue strict hygiene practices",
+                      "Take second medication dose",
+                      "Continue hygiene measures",
                       "Symptoms should be decreasing",
-                      "Maintain environmental controls"
+                      "Maintain cleaning routine"
                     ]
                   },
                   {
                     week: "Week 3",
                     title: "Monitoring",
-                    color: "green", 
+                    color: "yellow",
                     items: [
-                      "Symptoms should be resolved",
-                      "Continue good hygiene habits",
-                      "Monitor for any recurrence",
-                      "Gradually reduce intensive cleaning"
+                      "Monitor for symptom resolution",
+                      "Continue preventive hygiene",
+                      "Watch for reinfection signs",
+                      "Maintain household protocols"
                     ]
                   },
                   {
-                    week: "Week 4+",
-                    title: "Prevention",
-                    color: "teal",
+                    week: "Week 4",
+                    title: "Recovery",
+                    color: "purple",
                     items: [
-                      "Maintain improved hygiene habits",
-                      "Return to normal activities",
-                      "Watch for reinfection signs",
-                      "Consider follow-up if needed"
+                      "Symptoms should be resolved",
+                      "Continue good hygiene habits",
+                      "Consider follow-up if needed",
+                      "Return to normal activities"
                     ]
                   }
                 ].map((phase, index) => (
                   <Card key={index} className={`border-l-4 border-l-${phase.color}-500`}>
                     <CardHeader className="pb-2">
-                      <CardTitle className={`text-${phase.color}-800 text-base`}>
-                        {phase.week}
-                      </CardTitle>
-                      <CardDescription className={`text-${phase.color}-600 font-medium`}>
-                        {phase.title}
-                      </CardDescription>
+                      <CardTitle className={`text-base text-${phase.color}-800`}>{phase.week}</CardTitle>
+                      <CardDescription className={`text-${phase.color}-600 font-medium`}>{phase.title}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <ul className="space-y-1 text-xs">
+                      <ul className="space-y-1">
                         {phase.items.map((item, itemIndex) => (
-                          <li key={itemIndex} className="flex items-start gap-1">
-                            <span className="text-gray-400 mt-1">•</span>
+                          <li key={itemIndex} className="text-xs text-gray-600 flex items-start gap-1">
+                            <span className="text-gray-400">•</span>
                             <span>{item}</span>
                           </li>
                         ))}
@@ -1149,39 +933,27 @@ function App() {
               </div>
             </div>
 
-            {/* Success indicators */}
-            <Card className="border-l-4 border-l-blue-500">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-blue-600" />
-                  Signs of Successful Treatment
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3 text-sm">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <h4 className="font-medium text-blue-800 mb-2">Physical Improvements:</h4>
-                    <ul className="space-y-1 text-gray-700">
-                      <li>• Reduced or eliminated anal itching</li>
-                      <li>• Improved sleep quality</li>
-                      <li>• No visible worms in stool</li>
-                      <li>• Decreased restlessness at night</li>
-                      <li>• Return of normal appetite</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-blue-800 mb-2">Behavioral Improvements:</h4>
-                    <ul className="space-y-1 text-gray-700">
-                      <li>• Less irritability and mood swings</li>
-                      <li>• Improved concentration</li>
-                      <li>• Reduced scratching behaviors</li>
-                      <li>• Better overall energy levels</li>
-                      <li>• Return to normal daily activities</li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            {/* Success Indicators */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 border-l-4 border-l-blue-500">
+              <h3 className="text-lg font-semibold text-blue-800 mb-4 flex items-center gap-2">
+                <CheckCircle className="h-5 w-5" />
+                Signs of Successful Treatment
+              </h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <ul className="space-y-2 text-sm text-blue-700">
+                  <li>• No visible worms in stool or around anus</li>
+                  <li>• Reduced or eliminated itching</li>
+                  <li>• Improved sleep quality</li>
+                  <li>• Return to normal bowel habits</li>
+                </ul>
+                <ul className="space-y-2 text-sm text-blue-700">
+                  <li>• No new symptoms in family members</li>
+                  <li>• Completion of full medication course</li>
+                  <li>• Successful hygiene routine maintenance</li>
+                  <li>• Overall improvement in well-being</li>
+                </ul>
+              </div>
+            </div>
           </div>
         )
 
@@ -1194,20 +966,22 @@ function App() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
-        <div className="max-w-6xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-gray-900 text-center">
-            Complete Pinworm Management Guide
-          </h1>
-          <p className="text-gray-600 text-center mt-2">
-            A practical, evidence-based guide for families, couples, and individuals worldwide. Living normally during treatment.
-          </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="text-center">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              Complete Pinworm Management Guide
+            </h1>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              A practical, evidence-based guide for families, couples, and individuals worldwide. Living normally during treatment.
+            </p>
+          </div>
         </div>
       </header>
 
       {/* Navigation */}
-      <nav className="bg-white border-b sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-1 py-3">
+      <nav className="bg-white shadow-sm sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center space-x-1 py-4 overflow-x-auto">
             {[
               { id: 'overview', label: 'Overview', icon: Info },
               { id: 'management', label: 'Management', icon: Target },
@@ -1215,47 +989,47 @@ function App() {
               { id: 'intimacy', label: 'Intimacy', icon: Heart },
               { id: 'activities', label: 'Activities', icon: Activity },
               { id: 'natural', label: 'Natural Approaches', icon: Leaf },
-              { id: 'guidelines', label: 'Guidelines', icon: CheckCircle }
-            ].map((section) => {
-              const Icon = section.icon
-              return (
-                <Button
-                  key={section.id}
-                  variant={activeSection === section.id ? "default" : "ghost"}
-                  onClick={() => setActiveSection(section.id)}
-                  className={`flex items-center gap-2 transition-colors duration-200 ${
-                    activeSection === section.id 
-                      ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                      : 'hover:bg-blue-50 hover:text-blue-600'
-                  }`}
-                >
-                  <Icon className="h-4 w-4" />
-                  {section.label}
-                </Button>
-              )
-            })}
+              { id: 'guidelines', label: 'Guidelines', icon: Shield }
+            ].map((section) => (
+              <Button
+                key={section.id}
+                variant={activeSection === section.id ? "default" : "ghost"}
+                onClick={() => setActiveSection(section.id)}
+                className={`flex items-center gap-2 whitespace-nowrap transition-colors duration-200 ${
+                  activeSection === section.id 
+                    ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                    : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                }`}
+              >
+                <section.icon className="h-4 w-4" />
+                {section.label}
+              </Button>
+            ))}
           </div>
         </div>
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {renderContent()}
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t mt-12">
-        <div className="max-w-6xl mx-auto px-4 py-6">
-          <div className="text-center text-sm text-gray-600">
+      <footer className="bg-white border-t mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center text-sm text-gray-500">
             <p className="mb-2">
               This guide provides general information and should not replace professional medical advice.
             </p>
             <p>
-              Always consult with healthcare providers for diagnosis, treatment, and personalized medical guidance.
+              Always consult with healthcare providers for diagnosis and treatment decisions.
             </p>
           </div>
         </div>
       </footer>
+
+      {/* Vercel Analytics */}
+      <Analytics />
     </div>
   )
 }
