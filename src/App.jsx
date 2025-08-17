@@ -794,117 +794,179 @@ function App() {
             </div>
           </TabsContent>
 
-          {/* Natural Approaches Section - FIXED COLOR CODING */}
-          <TabsContent value="natural">
-            <div className="space-y-6">
-              <SectionCard className="border-l-4 border-l-green-500">
-                <div className="flex items-center gap-3 mb-4">
-                  <Leaf className="h-6 w-6 text-green-600" />
-                  <h2 className="text-xl font-bold text-green-800">Natural and Complementary Approaches</h2>
+          {/* Natural Approaches Section - ENHANCED WITH SCIENTIFIC DEPTH */}
+<TabsContent value="natural">
+  <div className="space-y-6">
+    <SectionCard className="border-l-4 border-l-green-500">
+      <div className="flex items-center gap-3 mb-4">
+        <Leaf className="h-6 w-6 text-green-600" />
+        <h2 className="text-xl font-bold text-green-800">Natural and Complementary Approaches</h2>
+      </div>
+
+      <Alert className="border-yellow-200 bg-yellow-50 mb-6 border-l-4 border-l-yellow-500">
+        <AlertTriangle className="h-4 w-4" />
+        <AlertDescription>
+          <strong>Important:</strong> Natural approaches should complement, not replace, proven medical treatment. 
+          Always consult healthcare providers before making significant dietary or supplement changes.
+        </AlertDescription>
+      </Alert>
+
+      <div className="space-y-6">
+        <div>
+          <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
+            <Utensils className="h-4 w-4" />
+            Dietary Approaches
+          </h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 border-l-4 border-l-green-500">
+              <h4 className="font-semibold text-green-800 mb-2">Potentially Helpful Foods:</h4>
+              <div className="space-y-3 text-sm">
+                <div>
+                  <p className="font-medium text-green-700">• Pumpkin seeds: 1-2 handfuls daily</p>
+                  <p className="text-gray-600 ml-2">Contains cucurbitacin compounds that may affect parasite motility. Studies show 69-75% reduction in some parasites, though pinworm-specific research is limited.</p>
                 </div>
+                <div>
+                  <p className="font-medium text-green-700">• Garlic: Fresh garlic in cooking</p>
+                  <p className="text-gray-600 ml-2">Allicin compounds disrupt parasite cell membranes. Most effective when crushed fresh. Proven against protozoa like Giardia and Entamoeba.</p>
+                </div>
+                <div>
+                  <p className="font-medium text-green-700">• Probiotic foods: Yogurt, kefir, fermented vegetables</p>
+                  <p className="text-gray-600 ml-2">Strengthen gut barrier and immune response. Beneficial bacteria produce antimicrobial compounds and compete with parasites for resources.</p>
+                </div>
+                <div>
+                  <p className="font-medium text-green-700">• High-fiber foods: Support regular bowel movements</p>
+                  <p className="text-gray-600 ml-2">Support beneficial bacteria growth, enhance mucus production, and improve intestinal transit to help eliminate parasites naturally.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 border-l-4 border-l-red-500">
+              <h4 className="font-semibold text-red-800 mb-2">Foods to Limit:</h4>
+              <div className="space-y-3 text-sm">
+                <div>
+                  <p className="font-medium text-red-700">• Excess sugar and refined carbohydrates</p>
+                  <p className="text-gray-600 ml-2">Disrupt gut microbiome balance and may suppress immune function, potentially hindering recovery.</p>
+                </div>
+                <div>
+                  <p className="font-medium text-red-700">• Processed foods during treatment</p>
+                  <p className="text-gray-600 ml-2">Often lack essential nutrients and contain additives that may disrupt beneficial gut bacteria.</p>
+                </div>
+                <div>
+                  <p className="font-medium text-red-700">• Foods that trigger digestive symptoms</p>
+                  <p className="text-gray-600 ml-2">Individual sensitivities may worsen discomfort during treatment. Focus on easily digestible, nutrient-dense foods.</p>
+                </div>
+                <div>
+                  <p className="font-medium text-red-700">• Undercooked meat and fish</p>
+                  <p className="text-gray-600 ml-2">Risk of additional parasitic infections while immune system is managing current condition.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <Alert className="border-yellow-200 bg-yellow-50 mb-6 border-l-4 border-l-yellow-500">
-                  <AlertTriangle className="h-4 w-4" />
-                  <AlertDescription>
-                    <strong>Important:</strong> Natural approaches should complement, not replace, proven medical treatment. 
-                    Always consult healthcare providers before making significant dietary or supplement changes.
-                  </AlertDescription>
-                </Alert>
-
-                <div className="space-y-6">
+        <div>
+          <h3 className="font-semibold text-lg mb-3">Herbal Considerations</h3>
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 border-l-4 border-l-amber-500 mb-4">
+            <div className="flex items-start gap-2 mb-3">
+              <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5" />
+              <div>
+                <p className="font-medium text-amber-800 mb-1">Note:</p>
+                <p className="text-sm text-amber-700">
+                  Scientific evidence for herbal treatments is limited. These should only be used as complementary support alongside proven medical treatment.
+                </p>
+              </div>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <h4 className="font-medium text-amber-800 mb-2">Traditional Herbs:</h4>
+                <ul className="space-y-1 text-sm text-amber-700">
+                  <li>• <strong>Wormwood:</strong> Traditional use, requires professional guidance</li>
+                  <li>• <strong>Black walnut:</strong> Traditional antiparasitic, limited modern evidence</li>
+                  <li>• <strong>Cloves:</strong> Traditional use, may support digestive health</li>
+                  <li>• <strong>Oregano oil:</strong> General antimicrobial properties</li>
+                </ul>
+              </div>
+              <div className="bg-pink-50 border border-pink-200 rounded-lg p-3">
+                <div className="flex items-start gap-2">
+                  <AlertTriangle className="h-4 w-4 text-pink-600 mt-0.5" />
                   <div>
-                    <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                      <Utensils className="h-4 w-4" />
-                      Dietary Approaches
-                    </h3>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="bg-green-50 border border-green-200 rounded-lg p-4 border-l-4 border-l-green-500">
-                        <h4 className="font-semibold text-green-800 mb-2">Potentially Helpful Foods:</h4>
-                        <ul className="space-y-1 text-sm text-green-700">
-                          <li>• <strong>Pumpkin seeds:</strong> 1-2 handfuls daily (limited scientific evidence)</li>
-                          <li>• <strong>Garlic:</strong> Fresh garlic in cooking (traditional use)</li>
-                          <li>• <strong>Probiotic foods:</strong> Yogurt, kefir, fermented vegetables</li>
-                          <li>• <strong>High-fiber foods:</strong> Support regular bowel movements</li>
-                        </ul>
-                      </div>
-                      
-                      {/* FIXED: Changed from green to red/orange for "Foods to Limit" */}
-                      <div className="bg-red-50 border border-red-200 rounded-lg p-4 border-l-4 border-l-red-500">
-                        <h4 className="font-semibold text-red-800 mb-2">Foods to Limit:</h4>
-                        <ul className="space-y-1 text-sm text-red-700">
-                          <li>• Excess sugar and refined carbohydrates</li>
-                          <li>• Processed foods during treatment</li>
-                          <li>• Foods that trigger digestive symptoms</li>
-                          <li>• Undercooked meat and fish</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="font-semibold text-lg mb-3">Herbal and Traditional Approaches</h3>
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 border-l-4 border-l-amber-500">
-                      <p className="text-sm text-amber-800 mb-2">
-                        <strong>Note:</strong> Scientific evidence for herbal treatments is limited. These should only be used 
-                        as complementary support alongside proven medical treatment.
-                      </p>
-                      <ul className="space-y-1 text-sm text-amber-700">
-                        <li>• <strong>Wormwood:</strong> Traditional use, requires professional guidance</li>
-                        <li>• <strong>Black walnut:</strong> Traditional antiparasitic, limited modern evidence</li>
-                        <li>• <strong>Cloves:</strong> Traditional use, may support digestive health</li>
-                        <li>• <strong>Papaya seeds:</strong> Traditional use in some cultures</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="font-semibold text-lg mb-3">Lifestyle Support</h3>
-                    <div className="grid md:grid-cols-3 gap-4">
-                      <div className="bg-white border border-gray-200 rounded-lg p-4 border-l-4 border-l-blue-500">
-                        <h4 className="font-medium text-gray-800 mb-2">Stress Management</h4>
-                        <ul className="space-y-1 text-sm text-gray-700">
-                          <li>• Regular sleep schedule</li>
-                          <li>• Stress reduction techniques</li>
-                          <li>• Moderate exercise</li>
-                          <li>• Mindfulness practices</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="bg-white border border-gray-200 rounded-lg p-4 border-l-4 border-l-green-500">
-                        <h4 className="font-medium text-gray-800 mb-2">Digestive Health</h4>
-                        <ul className="space-y-1 text-sm text-gray-700">
-                          <li>• Stay well-hydrated</li>
-                          <li>• Regular meal timing</li>
-                          <li>• Gentle movement after meals</li>
-                          <li>• Avoid digestive irritants</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="bg-white border border-gray-200 rounded-lg p-4 border-l-4 border-l-purple-500">
-                        <h4 className="font-medium text-gray-800 mb-2">Immune Support</h4>
-                        <ul className="space-y-1 text-sm text-gray-700">
-                          <li>• Adequate sleep (7-9 hours)</li>
-                          <li>• Regular physical activity</li>
-                          <li>• Balanced nutrition</li>
-                          <li>• Limit alcohol and smoking</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="font-semibold text-lg mb-3">Complementary Therapies</h3>
-                    <ul className="space-y-2 text-sm text-gray-700">
-                      <li>• <strong>Probiotics:</strong> May support gut health during and after treatment</li>
-                      <li>• <strong>Digestive enzymes:</strong> For those with digestive sensitivities</li>
-                      <li>• <strong>Immune support:</strong> Vitamin C, zinc (within recommended daily amounts)</li>
-                      <li>• <strong>Anti-inflammatory foods:</strong> Support overall digestive health</li>
+                    <h4 className="font-medium text-pink-800 mb-1">Important Notes</h4>
+                    <ul className="text-xs text-pink-700 space-y-1">
+                      <li>• Consult healthcare provider before use</li>
+                      <li>• May interact with medications</li>
+                      <li>• Not recommended as sole treatment</li>
                     </ul>
                   </div>
                 </div>
-              </SectionCard>
+              </div>
             </div>
-          </TabsContent>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="font-semibold text-lg mb-3">Lifestyle and Wellness Support</h3>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <h4 className="font-medium text-blue-800 mb-2">Stress Management</h4>
+              <ul className="space-y-1 text-sm text-blue-700">
+                <li>• Regular sleep schedule</li>
+                <li>• Stress reduction techniques</li>
+                <li>• Moderate exercise</li>
+                <li>• Mindfulness practices</li>
+              </ul>
+            </div>
+            
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 border-l-4 border-l-green-500">
+              <h4 className="font-medium text-green-800 mb-2">Digestive Health</h4>
+              <ul className="space-y-1 text-sm text-green-700">
+                <li>• Stay well-hydrated</li>
+                <li>• Regular meal timing</li>
+                <li>• Gentle movement after meals</li>
+                <li>• Avoid digestive irritants</li>
+              </ul>
+            </div>
+            
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 border-l-4 border-l-purple-500">
+              <h4 className="font-medium text-purple-800 mb-2">Immune Support</h4>
+              <ul className="space-y-1 text-sm text-purple-700">
+                <li>• Adequate sleep (7-9 hours)</li>
+                <li>• Regular physical activity</li>
+                <li>• Balanced nutrition</li>
+                <li>• Limit alcohol and smoking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="font-semibold text-lg mb-3">Complementary Therapies</h3>
+          <div className="bg-teal-50 border border-teal-200 rounded-lg p-4 border-l-4 border-l-teal-500">
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li>• <strong>Probiotics:</strong> May support gut health during and after treatment</li>
+              <li>• <strong>Digestive enzymes:</strong> For those with digestive sensitivities</li>
+              <li>• <strong>Immune support:</strong> Vitamin C, zinc (within recommended daily amounts)</li>
+              <li>• <strong>Anti-inflammatory foods:</strong> Support overall digestive health</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 border-l-4 border-l-blue-500">
+          <div className="flex items-start gap-2">
+            <Info className="h-4 w-4 text-blue-600 mt-0.5" />
+            <div>
+              <h4 className="font-medium text-blue-800 mb-1">Scientific Note:</h4>
+              <p className="text-sm text-blue-700">
+                While traditional use supports these approaches, peer-reviewed research specifically on pinworms is limited. 
+                These foods may provide general immune and digestive support during treatment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </SectionCard>
+  </div>
+</TabsContent>
 
           {/* Guidelines Section */}
           <TabsContent value="guidelines">
