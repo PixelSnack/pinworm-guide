@@ -1118,7 +1118,7 @@ function App() {
               Last updated: 2025 | For educational purposes only
             </p>
           </div>
-        <div>
+        </div>
       </footer>
     </div>
   )
